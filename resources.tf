@@ -8,7 +8,7 @@ tags = {
 }
 
 resource "aws_subnet" "subnet1" {
-cidr_block = "${cidrsubnet(aws_vpc.environment-ex-one.cidr_block, 3, 1)}"
+cidr_block = "${cidrsubnet(aws_vpc.environment-ex-one.cidr_block, 3, 2)}"
 vpc_id = "${aws_vpc.environment-ex-one.id}"
 availability_zone = "us-east-1a"
 }
