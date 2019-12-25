@@ -18,3 +18,15 @@ cidr_block = "${cidrsubnet(aws_vpc.environment-ex-one.cidr_block, 2, 2)}"
 vpc_id = "${aws_vpc.environment-ex-one.id}"
 availability_zone = "us-east-1b"
 }
+
+resource "aws_security_group" "aws_sg1" {
+vpc_id = "${aws_vpc.environment-ex-one.id}"
+ingress {
+cidr_blocks = [
+  "${aws_vpc.environment-ex-one.cidr_block}"
+  ]
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  }
+}
