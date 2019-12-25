@@ -12,3 +12,9 @@ cidr_block = "${cidrsubnet(aws_vpc.environment-ex-one.cidr_block, 3, 2)}"
 vpc_id = "${aws_vpc.environment-ex-one.id}"
 availability_zone = "us-east-1a"
 }
+
+resource "aws_subnet" "subnet2" {
+cidr_block = "${cidrsubnet(aws_vpc.environment-ex-one.cidr_block, 2, 2)}"
+vpc_id = "${aws_vpc.environment-ex-one.id}"
+availability_zone = "us-east-1b"
+}
